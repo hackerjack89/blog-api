@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  resources :comments, defaults: {format: :json}
-  resources :users, defaults: {format: :json}
-  resources :posts, defaults: {format: :json}
+  scope '/api' do
+    scope 'v1' do
+      resources :comments, :users, :posts,  defaults: {format: :json}
+    end
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
