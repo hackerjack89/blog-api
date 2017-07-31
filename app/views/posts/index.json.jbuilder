@@ -1,4 +1,2 @@
-json.set! :posts do
-  json.array! @posts, partial: 'posts/post', as: :post
-end
+json.array! @posts, partial: 'posts/post', as: :post
 
